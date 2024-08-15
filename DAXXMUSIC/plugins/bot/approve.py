@@ -1,7 +1,6 @@
 from DAXXMUSIC import app
 from os import environ
-from config import BOT_USERNAME
-import config
+from config import BOT_USERNAME, ADMIN_USER_IDS
 from pyrogram import Client, filters
 from pyrogram.types import ChatJoinRequest, InlineKeyboardButton, InlineKeyboardMarkup
 from PIL import Image, ImageDraw, ImageFont
@@ -75,6 +74,10 @@ random_photo_links = [
 # Define an event handler for chat join requests
 @app.on_chat_join_request((filters.group | filters.channel) & filters.chat(CHAT_ID) if CHAT_ID else (filters.group | filters.channel))
 async def autoapprove(client: app, message: ChatJoinRequest):
+    global APPROVED
+    if APPROVED != "on":
+        return
+
     chat = message.chat  # Chat
     user = message.from_user  # User
 
@@ -83,7 +86,6 @@ async def autoapprove(client: app, message: ChatJoinRequest):
     if user.photo:
         photo = await app.download_media(user.photo.big_file_id)
 
-    # Fix the indentation here
     welcome_photo = await get_userinfo_img(
         bg_path=bg_path,
         font_path=font_path,
@@ -95,18 +97,34 @@ async def autoapprove(client: app, message: ChatJoinRequest):
 
     await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
 
-    if APPROVED == "on":
-        await client.send_photo(
-            chat_id=chat.id,
-            photo=welcome_photo,
-            caption=TEXT.format(mention=user.mention, title=chat.title),
-            reply_markup=InlineKeyboardMarkup(
+    await client.send_photo(
+        chat_id=chat.id,
+        photo=welcome_photo,
+        caption=TEXT.format(mention=user.mention, title=chat.title),
+        reply_markup=InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            " ๏ ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ๏ ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
-                    ]
+                    InlineKeyboardButton(
+                        " ๏ ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ ๏ ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ]
-            ),
+            ]
+        ),
     )
-    
+
+# Command to enable or disable auto-approve
+@app.on_message(filters.command("approve") & filters.user(ADMIN_USER_IDS))
+async def approve_command(client, message):
+    global APPROVED
+    if len(message.command) != 2:
+        await message.reply_text("Usage: /approve [on|off]")
+        return
+
+    status = message.command[1].lower()
+    if status not in ["on", "off"]:
+        await message.reply_text("Invalid argument. Use 'on' or 'off'.")
+        return
+
+    APPROVED = status
+    await message.reply_text(f"Auto-approve is now {'enabled' if status == 'on' else 'disabled'}.")
+
+# Run the bot
