@@ -19,6 +19,9 @@ from DAXXMUSIC.utils.decorators.language import language
 from DAXXMUSIC.utils.extraction import extract_user
 from config import BANNED_USERS
 
+# Group ID where the log messages will be sent
+LOG_GROUP_ID = -1001975521991
+
 
 @app.on_message(filters.command(["gban", "globalban"]) & SUDOERS)
 @language
@@ -67,6 +70,12 @@ async def global_ban(client, message: Message, _):
     )
     await mystic.delete()
 
+    # Log the action in the specified group
+    await app.send_message(
+        LOG_GROUP_ID,
+        f"User {user.mention} ({user.id}) has been globally banned by {message.from_user.mention} in {message.chat.title} ({message.chat.id}).",
+    )
+
 
 @app.on_message(filters.command(["ungban"]) & SUDOERS)
 @language
@@ -99,6 +108,12 @@ async def global_un(client, message: Message, _):
     await message.reply_text(_["gban_9"].format(user.mention, number_of_chats))
     await mystic.delete()
 
+    # Log the action in the specified group
+    await app.send_message(
+        LOG_GROUP_ID,
+        f"User {user.mention} ({user.id}) has been globally unbanned by {message.from_user.mention} in {message.chat.title} ({message.chat.id}).",
+    )
+
 
 @app.on_message(filters.command(["gbannedusers", "gbanlist"]) & SUDOERS)
 @language
@@ -123,3 +138,5 @@ async def gbanned_list(client, message: Message, _):
         return await mystic.edit_text(_["gban_10"])
     else:
         return await mystic.edit_text(msg)
+
+# Run the bot
