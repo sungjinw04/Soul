@@ -28,7 +28,7 @@ async def ban_user(user_id, first_name, admin_id, admin_name, chat_id, reason, t
         return "I won't ban an admin bruh!!", False
     except Exception as e:
         if user_id == 7059759820:
-            return "Why should I ban myself? Sorry but I'm not stupid like you", False
+            return "Why should I ban myself? Bsdk bot hu chutiya nhi", False
         return f"Oops!!\n{e}", False
 
     user_mention = mention(user_id, first_name)
@@ -44,7 +44,7 @@ async def unban_user(user_id, first_name, admin_id, admin_name, chat_id):
     try:
         await app.unban_chat_member(chat_id, user_id)
     except ChatAdminRequired:
-        return "Make sure that you have given me that right"
+        return "RIGHTS TO DE BSDK"
     except Exception as e:
         return f"Oops!!\n{e}"
     user_mention = mention(user_id, first_name)
