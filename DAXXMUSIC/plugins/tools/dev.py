@@ -12,7 +12,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from DAXXMUSIC import app
-from config import OWNER_ID, EVAL
+from config import OWNER_ID
 ###########
 
 async def aexec(code, client, message):
