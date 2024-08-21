@@ -1,6 +1,5 @@
 import re
 import time
-import stripe
 from pyrogram import Client, filters, enums
 from DAXXMUSIC import app
 
