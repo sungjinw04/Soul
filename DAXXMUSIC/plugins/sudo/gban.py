@@ -73,7 +73,7 @@ async def global_ban(client, message: Message, _):
     # Log the action in the specified group
     await app.send_message(
         LOG_GROUP_ID,
-        f"User {user.mention} ({user.id}) has been globally banned by {message.from_user.mention} in {message.chat.title} ({message.chat.id}).",
+        f"User {user.mention} ({user.id}) has been fucked globally by {message.from_user.mention} in {message.chat.title} ({message.chat.id}).",
     )
 
 
