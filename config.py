@@ -72,7 +72,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/SOULS_BORNX")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+H85eTC_5eMg4YTQ1")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/souls_societyy")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "5242880000"))
 # ------------------------------------
 # ------------------------------------
 # ------------------------------------
-STRING1 = getenv("STRING_SESSION1", "BQGDgkYAGegAOOa6eCxC1diJM-6qHn1r27P-lm1sJI94L6Fo2O63XoZC9Sk1Zb9DFdUKkGb7NKuPN66ThcyCSP4EzqTP90E1wPh8bdiFlK4EPaK5whmbj-E5L-WwOjSqE68P-cMtd74FbhigkoJo0LPZOE47e_U1wlDKUTPeJA2bJk3ku8Y7Vpl79BTfx_dwPOcPCfQ111-MGZBYC7vx01sSAW5z9rHrwPeDcHXz2X4Onh23QntaWtwUiZ4htq6jqufq95WwPs_2ysI04kIg7jCJ4X4owWxDM7kxUZU7u8YaSRnFyMF9T0Wn7BY6ODegTcgSD6yWRPSFSjbvx7UVx_vZsFBRgAAAAABRRDPjAA")
+STRING1 = getenv("STRING_SESSION1", "BQGDgkYAVPPz5IN3FBs8CgG9EQQNOZ9zjhpEany9h1Jq6joUYBY5ULdIR_3IFMWwj7GB6q8W1r39KZbUn-nVejJSr-N6wF_Gs4NsaZ8F5pHRdm1QCLcfVCCUtnNla9-eZvjFK9kd8VU8q9_XyPmMb1uYjbQN5j-ei5KnML_mkro8ggFlFJwaO68Ht14ayKZshaflfyWcq_uhtrcq9xNCYjYQKrtiV93cmvgJMKP4RF3RCSvJLGyKSUiackXNYhETv0DjgQjZeudD-BNhMVPSH93rMJc-f6jtwIWDtptMBLYW5_uLmpKYRiR_Sk32l9TR7bKH9mZjYsB7Z9JOyH1DQg4mzjsu2wAAAABRRDPjAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
