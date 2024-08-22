@@ -21,7 +21,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "soulsupremebot")
 # --------------------------------------------------------
 BOT_NAME = getenv("BOT_NAME" , "𝐒𝐎𝐔𝐋 𝐒𝐔𝐏𝐑𝐄𝐌𝐄『 魂 』")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "malevolentshrine7")
+ASSUSERNAME = getenv("ASSUSERNAME" , "chico_daddy")
 # ---------------------------------------------------------
 UPSTREAM_REPO = UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
@@ -118,7 +118,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "5242880000"))
 # ------------------------------------
 # ------------------------------------
 # ------------------------------------
-STRING1 = getenv("STRING_SESSION1", "BQGDgkYAVPPz5IN3FBs8CgG9EQQNOZ9zjhpEany9h1Jq6joUYBY5ULdIR_3IFMWwj7GB6q8W1r39KZbUn-nVejJSr-N6wF_Gs4NsaZ8F5pHRdm1QCLcfVCCUtnNla9-eZvjFK9kd8VU8q9_XyPmMb1uYjbQN5j-ei5KnML_mkro8ggFlFJwaO68Ht14ayKZshaflfyWcq_uhtrcq9xNCYjYQKrtiV93cmvgJMKP4RF3RCSvJLGyKSUiackXNYhETv0DjgQjZeudD-BNhMVPSH93rMJc-f6jtwIWDtptMBLYW5_uLmpKYRiR_Sk32l9TR7bKH9mZjYsB7Z9JOyH1DQg4mzjsu2wAAAABRRDPjAA")
+STRING1 = getenv("STRING_SESSION1", "BQGDgkYAba55trB8oWrpcVPHmjTl0LRWJploRKhSemPX9tYy4kEbtchgUS-Lt0GX524_hfqel02ypaBLHGrvlFjPLef5Mf1mJvtt1rlgSw6kXuJ_QxdOF8lZoPaPmKEe0khBfLzkswxiIjem7orvrD3S14pJZbf1qxn-QaRumvu1Vwxf0KHaQcmHBiIAE5weCfrsaC_hEWzvZdUhLYWEeRHq1aBmI0hGniu2wrcI7J_ZO7S3EbiMCSVk-IgnQFRxgIbFEAhl09JnI1efFQvLBLlwvst5rL9KEAr_nNCPNu9fwsyUocwjzn6higcxY4GewoXvZgL0-5UpSi42-Xn0Ana6u6M6QQAAAAGSN0snAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
