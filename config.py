@@ -21,7 +21,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "soulsupremebot")
 # --------------------------------------------------------
 BOT_NAME = getenv("BOT_NAME" , "𝐒𝐎𝐔𝐋 𝐒𝐔𝐏𝐑𝐄𝐌𝐄『 魂 』")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "soulmusicassistant")
+ASSUSERNAME = getenv("ASSUSERNAME" , "malevolentshrine7")
 # ---------------------------------------------------------
 UPSTREAM_REPO = UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
