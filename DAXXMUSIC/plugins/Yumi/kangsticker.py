@@ -34,7 +34,7 @@ from DAXXMUSIC.utils.stickerset import (
 # -----------
 
 MAX_STICKERS = (
-    120  # would be better if we could fetch this limit directly from telegram
+    500  # would be better if we could fetch this limit directly from telegram
 )
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
 # ------------------------------------------
