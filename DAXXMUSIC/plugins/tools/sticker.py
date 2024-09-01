@@ -7,6 +7,7 @@ import urllib.request as urllib
 from html import escape
 from urllib.parse import quote as urlquote
 from telegram.constants import ParseMode
+from telegram.error import TelegramError
 
 from bs4 import BeautifulSoup
 from PIL import Image
@@ -15,7 +16,6 @@ from telegram import (
     Bot,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    TelegramError,
     Update,
 )
 from telegram.ext import CallbackContext, CallbackQueryHandler
