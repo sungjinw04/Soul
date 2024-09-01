@@ -8,6 +8,7 @@ from html import escape
 from urllib.parse import quote as urlquote
 from telegram.constants import ParseMode
 from telegram.error import TelegramError
+from telegram.utils.helpers import some_function
 
 from bs4 import BeautifulSoup
 from PIL import Image
