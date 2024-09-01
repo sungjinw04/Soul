@@ -22,9 +22,7 @@ from telegram import (
 from telegram.ext import CallbackContext, CallbackQueryHandler
 
 
-from DAXXMUSIC import dispatcher
-from DAXXMUSIC import tbot as bot
-from DAXXMUSIC.modules.disable import DisableAbleCommandHandler
+
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
