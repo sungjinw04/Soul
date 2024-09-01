@@ -6,6 +6,7 @@ import ffmpeg
 import urllib.request as urllib
 from html import escape
 from urllib.parse import quote as urlquote
+from telegram.constants import ParseMode
 
 from bs4 import BeautifulSoup
 from PIL import Image
@@ -14,7 +15,6 @@ from telegram import (
     Bot,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    ParseMode,
     TelegramError,
     Update,
 )
