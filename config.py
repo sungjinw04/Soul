@@ -71,8 +71,8 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/SOULS_BORNX")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/souls_societyy")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Sung_networks")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sung_talks")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
