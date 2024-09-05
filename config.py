@@ -9,17 +9,17 @@ from pyrogram import filters
 load_dotenv()
 # ------------------------------------
 # -----------------------------------------------------
-API_ID = int(getenv("API_ID", "25064357"))
-API_HASH = getenv("API_HASH", "cda9f1b3f9da4c0c93d1f5c23ccb19e2")
+API_ID = int(getenv("API_ID", "22906249"))
+API_HASH = getenv("API_HASH", "a8aa1616cda4920822ee4305908486d6")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "7262095494:AAERgUcxzP6Lr0HiehEHOCM3kC3JuNkGa6E")
+BOT_TOKEN = getenv("BOT_TOKEN", "7060769156:AAH2n6rNlCEfToRG1zv_7DoEkrHIM6cL9ms")
 # -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","sung_jinwo4")
+OWNER_USERNAME = getenv("OWNER_USERNAME","sung_jinwo2")
 # --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME" , "soulsupremebot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "Levi_Xprobot")
 # --------------------------------------------------------
-BOT_NAME = getenv("BOT_NAME" , "𝐒𝐎𝐔𝐋 𝐒𝐔𝐏𝐑𝐄𝐌𝐄『 魂 』")
+BOT_NAME = getenv("BOT_NAME" , "𝐋ᴇᴠɪ 𝐀ᴄᴋᴇʀᴍᴀɴ")
 # ---------------------------------------------------------
 ASSUSERNAME = getenv("ASSUSERNAME" , "chico_daddy")
 # ---------------------------------------------------------
@@ -36,7 +36,7 @@ SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "3000"))
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://misamusic:misamusic@cluster0.s9trzk4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Sungjinwoo4:sung4224@cluster0.ayaos.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
@@ -145,21 +145,21 @@ confirmer = {}
 # ------------------------------------------------------------------------
 # ------------------------------------------------------------------------
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph//file/919714d04904fae43ffd0.jpg"
+    "START_IMG_URL", "https://graph.org//file/b49463ae8e0fdecec3744.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://telegra.ph//file/466d670a36728a36283c9.jpg"
+    "PING_IMG_URL", "https://graph.org//file/70fb324cda8936a3f9d00.jpg"
 )
-PLAYLIST_IMG_URL = "https://telegra.ph/file/f4395ca92239d6de6df8b.jpg"
-STATS_IMG_URL = "https://telegra.ph/file/a44534c784f1eac464d85.jpg"
-TELEGRAM_AUDIO_URL = "https://telegra.ph/file/d03b8bbec0af13849e031.jpg"
-TELEGRAM_VIDEO_URL = "https://telegra.ph/file/5767b8e5619d616c7bf71.jpg"
-STREAM_IMG_URL = "https://telegra.ph/file/d83a2cf2bd0dd868f37ae.jpg"
-SOUNCLOUD_IMG_URL = "https://telegra.ph/file/f4395ca92239d6de6df8b.jpg"
-YOUTUBE_IMG_URL = "https://telegra.ph/file/35b034fe2cdc2effdd02e.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://telegra.ph/file/45abf960687cff85f5855.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://telegra.ph/file/eeff283b0ad70d40b80da.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://telegra.ph/file/abdbf823aa2485c241b19.jpg"
+PLAYLIST_IMG_URL = "https://graph.org//file/be2dd46a1c4b5474c6084.jpg"
+STATS_IMG_URL = "https://graph.org//file/b49463ae8e0fdecec3744.jpg"
+TELEGRAM_AUDIO_URL = "https://graph.org//file/be2dd46a1c4b5474c6084.jpg"
+TELEGRAM_VIDEO_URL = "https://graph.org//file/70fb324cda8936a3f9d00.jpg"
+STREAM_IMG_URL = "https://graph.org//file/70fb324cda8936a3f9d00.jpg"
+SOUNCLOUD_IMG_URL = "https://graph.org//file/be2dd46a1c4b5474c6084.jpg"
+YOUTUBE_IMG_URL = "https://graph.org//file/be2dd46a1c4b5474c6084.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://graph.org//file/70fb324cda8936a3f9d00.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://graph.org//file/b49463ae8e0fdecec3744.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org//file/b49463ae8e0fdecec3744.jpg"
 
 # ------------------------------------------------------------------------
 # ------------------------------------------------------------------------
