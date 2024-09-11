@@ -1,26 +1,26 @@
-from pyrogram.types import InlineKeyboardButton
+from pyrogram import Client
+from pyrogram.types import InlineKeyboardButton, CallbackQuery
+from pyrogram import filters
 
 import config
 from DAXXMUSIC import app
-
 
 def start_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["SUMMON ME"], url=f"https://t.me/{app.username}?startgroup=true"
+                text=_["S_B_1"], url=f"https://t.me/{app.username}?startgroup=true"
             ),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
         ],
     ]
     return buttons
 
-
 def private_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["S_B_3"],
+                text=_["SUMMON ME"],
                 url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
@@ -30,6 +30,8 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper"),
+            InlineKeyboardButton(text=_["S_B_6"], callback_data="waifu"),     
         ],
     ]
     return buttons
+
