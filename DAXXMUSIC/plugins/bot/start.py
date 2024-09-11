@@ -50,7 +50,7 @@ async def start_pm(client, message: Message, _):
         await asyncio.sleep(0.6)
         await msg.edit("☠️")
         await asyncio.sleep(0.7)
-        await msg.edit("🥷")
+        await msg.edit("❤️‍🔥")
     
     # Show the "Starting Bot" message
     await asyncio.sleep(0.6)
