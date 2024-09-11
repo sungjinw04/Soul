@@ -42,14 +42,14 @@ async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     
     # Sending initial emoji
-    msg = await message.reply("🦋")
+    msg = await message.reply("⚡")
     
     # Repeat the cycle of emojis three times
     for _ in range(2):
         await asyncio.sleep(0.6)
-        await msg.edit("❄️")
+        await msg.edit("☠️")
         await asyncio.sleep(0.7)
-        await msg.edit("✨")
+        await msg.edit("🥷")
     
     # Show the "Starting Bot" message
     await asyncio.sleep(0.6)
