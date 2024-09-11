@@ -40,6 +40,26 @@ NEXI_VID = [
 @LanguageStart
 async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
+    
+    # Sending initial emoji
+    msg = await message.reply("🦋")
+    
+    # Repeat the cycle of emojis three times
+    for _ in range(2):
+        await asyncio.sleep(0.6)
+        await msg.edit("❄️")
+        await asyncio.sleep(0.7)
+        await msg.edit("✨")
+    
+    # Show the "Starting Bot" message
+    await asyncio.sleep(0.6)
+    await msg.edit("Starting Bot, Please Wait...")
+    
+    # Wait for 3 seconds before deleting the "Starting Bot" message
+    await asyncio.sleep(1.75)
+    await msg.delete()
+    
+
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
