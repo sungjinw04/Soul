@@ -17,6 +17,8 @@ def start_panel(_):
     return buttons
 
 def private_panel(_):
+    if not isinstance(_, dict):
+        raise ValueError("Expected `_` to be a dictionary.")
     buttons = [
         [
             InlineKeyboardButton(
