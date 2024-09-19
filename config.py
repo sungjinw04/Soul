@@ -71,8 +71,8 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Sung_networks")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sung_talks")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/eldian_networks")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/eldian_empire")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "5242880000"))
 # ------------------------------------
 # ------------------------------------
 # ------------------------------------
-STRING1 = getenv("STRING_SESSION1", "BQGDgkYAVPPz5IN3FBs8CgG9EQQNOZ9zjhpEany9h1Jq6joUYBY5ULdIR_3IFMWwj7GB6q8W1r39KZbUn-nVejJSr-N6wF_Gs4NsaZ8F5pHRdm1QCLcfVCCUtnNla9-eZvjFK9kd8VU8q9_XyPmMb1uYjbQN5j-ei5KnML_mkro8ggFlFJwaO68Ht14ayKZshaflfyWcq_uhtrcq9xNCYjYQKrtiV93cmvgJMKP4RF3RCSvJLGyKSUiackXNYhETv0DjgQjZeudD-BNhMVPSH93rMJc-f6jtwIWDtptMBLYW5_uLmpKYRiR_Sk32l9TR7bKH9mZjYsB7Z9JOyH1DQg4mzjsu2wAAAABRRDPjAA")
+STRING1 = getenv("STRING_SESSION1", "BQFdhYkAxX3OHkO5b7FSA4TyD7sZXMS2DifSzekOZMFZumd3IJ7xrF-wKyfSq2F6Fvli_W1xSVMLPhepqS64af82PSyfHdNsRyS2l_5PFWNdX1E7b02XQmAW94QVDJG-o2gD7aFEjQ1TxJ95QS4yh7eyU6uiSmUmxKk6YK1fmnwbXSn9ago-4sE1YEcBUnrkzok5Gv6O6FQ9cenrARkxu8uzLVlqU35-75O0jI0wfcfJ5BLPMNcXWRPMDOBhBC6OIky-r5YUSy3WjYSxwfwFNmVbMqDGwXBJdKDdzgrTJXhOjqCWv7T9qMiXRmtF7dFDTVwwR4mUrdDLMfOjLbR7ICB84Rh1BAAAAAGa3Sc6AA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
