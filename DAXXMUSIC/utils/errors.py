@@ -22,7 +22,6 @@ def split_limits(text):
             small_msg = line
 
     result.append(small_msg)
-
     return result
 
 
@@ -35,12 +34,13 @@ def capture_err(func):
             await app.leave_chat(message.chat.id)
             return
         except Exception as err:
+            # Get the exception details
             exc_type, exc_obj, exc_tb = sys.exc_info()
+            # Format the exception details
             errors = traceback.format_exception(
-                etype=exc_type,
-                value=exc_obj,
-                tb=exc_tb,
+                exc_type, exc_obj, exc_tb
             )
+            # Prepare error feedback message
             error_feedback = split_limits(
                 "**ERROR** | `{}` | `{}`\n\n```{}```\n\n```{}```\n".format(
                     0 if not message.from_user else message.from_user.id,
@@ -49,8 +49,10 @@ def capture_err(func):
                     "".join(errors),
                 ),
             )
+            # Send error feedback to the logger
             for x in error_feedback:
                 await app.send_message(LOGGER, x)
             raise err
 
     return capture
+
