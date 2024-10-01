@@ -1,8 +1,9 @@
-
 import imghdr
 import os
 from asyncio import gather
 from traceback import format_exc
+import sys
+import traceback
 
 from pyrogram import filters
 from pyrogram.errors import (
@@ -12,6 +13,7 @@ from pyrogram.errors import (
     StickerPngDimensions,
     StickerPngNopng,
     UserIsBlocked,
+    StickersetInvalid  # <-- Added the missing import
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from DAXXMUSIC import app
@@ -33,11 +35,11 @@ from DAXXMUSIC.utils.stickerset import (
 
 # -----------
 
-MAX_STICKERS = (
-    120  # would be better if we could fetch this limit directly from telegram
-)
+MAX_STICKERS = 120  # would be better if we could fetch this limit directly from Telegram
 SUPPORTED_TYPES = ["jpeg", "png", "webp"]
+
 # ------------------------------------------
+
 @app.on_message(filters.command("get_sticker"))
 @capture_err
 async def sticker_image(_, message: Message):
@@ -49,7 +51,7 @@ async def sticker_image(_, message: Message):
     if not r.sticker:
         return await message.reply("Reply to a sticker.")
 
-    m = await message.reply("Sending..")
+    m = await message.reply("Sending...")
     f = await r.download(f"{r.sticker.file_unique_id}.png")
 
     await gather(
@@ -61,6 +63,8 @@ async def sticker_image(_, message: Message):
 
     await m.delete()
     os.remove(f)
+
+
 #----------------
 @app.on_message(filters.command("kang"))
 @capture_err
@@ -184,10 +188,11 @@ async def kang(client, message: Message):
             )
             break
         except Exception as e:
+            errors = traceback.format_exception(*sys.exc_info())  # Removed 'etype'
+            print(errors)
             await msg.edit_text(f"Error: {str(e)}")
             return
 
     await msg.edit(
         f"Sticker Kanged To [Pack](t.me/addstickers/{packname})\nEmoji: {sticker_emoji}"
     )
-
