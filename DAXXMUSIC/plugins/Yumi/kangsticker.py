@@ -71,7 +71,7 @@ async def kang(client, message: Message):
         return await message.reply_text(
             "You are anon admin, kang stickers in my pm."
         )
-    msg = await message.reply_text("Kanging Sticker..")
+    msg = await message.reply_text("Kanging Sticker...")
 
     # Find the proper emoji
     args = message.text.split()
@@ -130,61 +130,64 @@ async def kang(client, message: Message):
         await message.reply_text(str(e))
         e = format_exc()
         return print(e)
-#-------
-    packnum = 0
-    packname = "f" + str(message.from_user.id) + "_by_" + BOT_USERNAME
-    limit = 0
-    try:
-        while True:
-            # Prevent infinite rules
-            if limit >= 50:
-                return await msg.delete()
 
+    # Sticker set handling
+    packnum = 0
+    packname = f"f{message.from_user.id}_by_{BOT_USERNAME}"
+    packtitle = f"{message.from_user.first_name[:32]}'s kang pack"
+    limit = 0
+
+    while True:
+        try:
             stickerset = await get_sticker_set_by_name(client, packname)
-            if not stickerset:
-                stickerset = await create_sticker_set(
-                    client,
-                    message.from_user.id,
-                    f"{message.from_user.first_name[:32]}'s kang pack",
-                    packname,
-                    [sticker],
-                )
-            elif stickerset.set.count >= MAX_STICKERS:
+            if stickerset.set.count >= MAX_STICKERS:
                 packnum += 1
-                packname = (
-                    "f"
-                    + str(packnum)
-                    + "_"
-                    + str(message.from_user.id)
-                    + "_by_"
-                    + BOT_USERNAME
-                )
+                packname = f"f{packnum}_{message.from_user.id}_by_{BOT_USERNAME}"
                 limit += 1
+                if limit >= 50:
+                    return await msg.edit("Too many packs, can't kang.")
                 continue
             else:
-                try:
-                    await add_sticker_to_set(client, stickerset, sticker)
-                except StickerEmojiInvalid:
-                    return await msg.edit("[ERROR]: INVALID_EMOJI_IN_ARGUMENT")
-            limit += 1
+                await add_sticker_to_set(client, stickerset, sticker)
             break
-
-        await msg.edit(
-            "Sticker Kanged To [Pack](t.me/addstickers/{})\nEmoji: {}".format(
-                packname, sticker_emoji
+        except StickerPngNopng:
+            await message.reply_text(
+                "Stickers must be png files but the provided image was not a png"
             )
-        )
-    except (PeerIdInvalid, UserIsBlocked):
-        keyboard = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Start", url=f"t.me/{BOT_USERNAME}")]]
-        )
-        await msg.edit(
-            "You Need To Start A Private Chat With Me.",
-            reply_markup=keyboard,
-        )
-    except StickerPngNopng:
-        await message.reply_text(
-            "Stickers must be png files but the provided image was not a png"
-        )
-    except StickerPngDimensions:
-        await message.reply_text("The sticker png dimensions are invalid.")
+            return
+        except StickerPngDimensions:
+            await message.reply_text("The sticker png dimensions are invalid.")
+            return
+        except StickerEmojiInvalid:
+            await msg.edit("[ERROR]: INVALID_EMOJI_IN_ARGUMENT")
+            return
+        except PeerIdInvalid:
+            keyboard = InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Start", url=f"t.me/{BOT_USERNAME}")]]
+            )
+            await msg.edit(
+                "You Need To Start A Private Chat With Me.",
+                reply_markup=keyboard,
+            )
+            return
+        except UserIsBlocked:
+            await msg.edit("It looks like you've blocked me. Unblock me first!")
+            return
+        except StickersetInvalid:
+            # Create a new sticker set
+            await create_sticker_set(
+                client,
+                message.from_user.id,
+                packtitle,
+                packname,
+                [sticker],
+            )
+            break
+        except Exception as e:
+            await msg.edit_text(f"Error: {str(e)}")
+            return
+
+    await msg.edit(
+        f"Sticker Kanged To [Pack](t.me/addstickers/{packname})\nEmoji: {sticker_emoji}"
+    )
+
